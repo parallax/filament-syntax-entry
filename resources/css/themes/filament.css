@@ -1,0 +1,73 @@
+.syntax-entry-theme-filament {
+    .hljs {
+        @apply bg-gray-50 text-gray-950 ring-gray-950/5;
+    }
+    .hljs-doctag,
+    .hljs-keyword,
+    .hljs-meta .hljs-keyword,
+    .hljs-template-tag,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable.language_ {
+        @apply text-red-600;
+    }
+    .hljs-title,
+    .hljs-title.class_,
+    .hljs-title.class_.inherited__,
+    .hljs-title.function_ {
+        @apply text-purple-600;
+    }
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-operator,
+    .hljs-variable,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id {
+        @apply text-blue-600;
+    }
+    .hljs-regexp,
+    .hljs-string,
+    .hljs-meta .hljs-string {
+        @apply text-blue-950;
+    }
+    .hljs-built_in,
+    .hljs-symbol {
+        @apply text-orange-600;
+    }
+    .hljs-comment,
+    .hljs-code,
+    .hljs-formula {
+        @apply text-gray-400;
+    }
+    .hljs-name,
+    .hljs-quote,
+    .hljs-selector-tag,
+    .hljs-selector-pseudo {
+        @apply text-green-600;
+    }
+    .hljs-subst {
+        @apply text-gray-950;
+    }
+    .hljs-section {
+        @apply text-blue-600 font-bold;
+    }
+    .hljs-bullet {
+        @apply text-amber-700;
+    }
+    .hljs-emphasis {
+        @apply text-gray-950 italic;
+    }
+    .hljs-strong {
+        @apply text-gray-950 font-bold;
+    }
+    .hljs-addition {
+        @apply text-green-600 bg-gray-200;
+    }
+    .hljs-deletion {
+        @apply text-red-600 bg-gray-200;
+    }
+}
