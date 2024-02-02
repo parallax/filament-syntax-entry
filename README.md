@@ -84,7 +84,7 @@ SyntaxEntry::make('metadata')
     ->darkModeTheme('filament-dark');
 ```
 
-To keep the budle size down only the following themes are currently available:
+To keep the bundle size down only the following themes are currently available:
 
 - `a11y-dark`
 - `a11y-light`
