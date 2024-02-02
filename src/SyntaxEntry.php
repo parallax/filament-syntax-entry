@@ -13,9 +13,23 @@ class SyntaxEntry extends Entry implements HasAffixActions
 
     protected string $view = 'filament-syntax-entry::syntax-entry';
 
+    protected string | Closure | null $language = null;
+
     protected string | Closure | null $theme = 'filament';
 
-    protected string | Closure | null $darkModeTheme = null;
+    protected string | Closure | null $darkModeTheme = 'filament-dark';
+
+    public function language(string | Closure $language): static
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    public function getLanguage(): string
+    {
+        return $this->evaluate($this->language);
+    }
 
     public function theme(string | Closure $theme): static
     {

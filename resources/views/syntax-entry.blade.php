@@ -1,3 +1,10 @@
+@php
+    use Illuminate\Support\Str;
+
+    $value = $getState();
+    $validJson = !is_string($value) && Str::isJson(json_encode($value));
+@endphp
+
 <x-dynamic-component class="filament-syntax-entry-component" :component="$getEntryWrapperView()" :entry="$entry" wire:ignore>
     <div 
         class="filament-syntax-entry"
@@ -33,7 +40,7 @@
             x-init="init()"
             x-on:destroyed="cleanup"
         >
-            <pre><code>{{ json_encode($getState(), JSON_PRETTY_PRINT) }}</code></pre>
+            <pre><code>{{ $validJson ? json_encode($value, JSON_PRETTY_PRINT) : $value }}</code></pre>
         </div>
     </div>
 </x-dynamic-component>
