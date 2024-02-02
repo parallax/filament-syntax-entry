@@ -1,4 +1,4 @@
-<x-dynamic-component :component="$getEntryWrapperView()" :entry="$entry" wire:ignore>
+<x-dynamic-component class="filament-syntax-entry-component" :component="$getEntryWrapperView()" :entry="$entry" wire:ignore>
     <div 
         class="filament-syntax-entry"
         x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc(

@@ -74,11 +74,15 @@
 @import './themes/xcode.css';
 @import './themes/xt256.css';
 
+.filament-syntax-entry-component .grid {
+    @apply block;
+}
+
 .filament-syntax-entry {
     @apply font-mono rounded-xl overflow-hidden shadow-sm ring-1;
 
     .hljs {
-        @apply block p-6 overflow-x-auto whitespace-pre-wrap;
+        @apply block p-6 overflow-x-scroll;
     }
 }
 
