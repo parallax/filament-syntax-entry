@@ -1,6 +1,6 @@
 {
     "name": "parallax/filament-syntax-entry",
-    "description": "Add a Filament infolist entry for syntax highlighting.",
+    "description": "Add a Filament infolist entry for themeable syntax highlighting.",
     "keywords": [
         "parallax",
         "laravel",
