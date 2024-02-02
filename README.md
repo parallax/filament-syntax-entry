@@ -5,7 +5,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/parallax/filament-syntax-entry?style=flat-square)](https://packagist.org/packages/parallax/filament-syntax-entry)
 ![Stars](https://img.shields.io/github/stars/parallax/filament-syntax-entry?style=flat-square)
 
-Add a Filament infolist entry for themeable syntax highlighting using [highlight.js](https://highlightjs.org).
+Add a Filament [infolist entry](https://filamentphp.com/docs/3.x/infolists/entries/getting-started) for themeable syntax highlighting using [highlight.js](https://highlightjs.org).
 
 <img class="filament-hidden" src="https://github.com/parallax/filament-syntax-entry/raw/main/assets/filament-syntax-entry.jpg"/>
 
@@ -25,7 +25,7 @@ php artisan vendor:publish --tag="filament-syntax-entry-views"
 
 ## Quickstart
 
-### Add the Infolist entry
+### Add the [Infolist entry](https://filamentphp.com/docs/3.x/infolists/entries/getting-started)
 
 Add the `SyntaxEntry` to the `$infolist->schema()` method.
 
