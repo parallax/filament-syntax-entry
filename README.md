@@ -1,4 +1,4 @@
-# Filament Comments
+# Filament Syntax Entry
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/parallax/filament-syntax-entry?style=flat-square)](https://packagist.org/packages/parallax/filament-syntax-entry)
 [![Software License](https://img.shields.io/packagist/l/parallax/filament-syntax-entry?style=flat-square)](LICENSE.md)
