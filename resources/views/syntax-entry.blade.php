@@ -19,6 +19,7 @@
     >
         <div
             x-data="{
+                theme: localStorage.getItem('theme') ?? @js(filament()->getDefaultThemeMode()->value),
                 init() {
                     this.updateTheme();
                     const observer = new MutationObserver(() => this.updateTheme());
