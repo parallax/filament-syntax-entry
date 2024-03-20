@@ -54,7 +54,6 @@ class FilamentSyntaxEntryServiceProvider extends PackageServiceProvider
     {
         return [
             Css::make('filament-syntax-entry-styles', __DIR__ . '/../resources/dist/filament-syntax-entry.css'),
-            Js::make('filament-syntax-entry-scripts', __DIR__ . '/../resources/dist/filament-syntax-entry.js'),
         ];
     }
 
