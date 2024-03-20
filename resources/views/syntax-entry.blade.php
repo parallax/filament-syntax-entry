@@ -6,9 +6,6 @@
             package: 'parallax/filament-syntax-entry'
         ))]"
     >
-        <div>
-            {{-- <pre><code>{{ $$getState() }}</code></pre> --}}
-            {{ $getState() }}
-        </div>
+        <pre>{{ $getValue() }}</pre>
     </div>
 </x-dynamic-component>
