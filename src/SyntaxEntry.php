@@ -17,7 +17,7 @@ class SyntaxEntry extends Entry implements HasAffixActions
 
     protected string $view = 'filament-syntax-entry::syntax-entry';
 
-    protected string | Closure | null $language = null;
+    protected string | Closure | null $language = 'json';
 
     protected string | Closure | null $theme = 'filament';
 
