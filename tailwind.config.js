@@ -9,6 +9,6 @@ module.exports = {
     ],
     safelist: [
         /syntax-entry-.+/,
-        /hljs-.+/
+        /hl-.+/
     ]
 }

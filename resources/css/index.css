@@ -1,95 +1,44 @@
-@import '../../vendor/filament/filament/resources/css/theme.css';
-@import './themes/a11y-dark.css';
-@import './themes/a11y-light.css';
-@import './themes/agate.css';
-@import './themes/an-old-hope.css';
-@import './themes/androidstudio.css';
-@import './themes/arduino-light.css';
-@import './themes/arta.css';
-@import './themes/ascetic.css';
-@import './themes/atom-one-dark-reasonable.css';
-@import './themes/atom-one-dark.css';
-@import './themes/atom-one-light.css';
-@import './themes/brown-paper.css';
-@import './themes/codepen-embed.css';
-@import './themes/color-brewer.css';
-@import './themes/dark.css';
-@import './themes/default.css';
-@import './themes/devibeans.css';
-@import './themes/docco.css';
-@import './themes/far.css';
-@import './themes/felipec.css';
-@import './themes/filament-dark.css';
-@import './themes/filament.css';
-@import './themes/foundation.css';
-@import './themes/github-dark-dimmed.css';
-@import './themes/github-dark.css';
-@import './themes/github.css';
-@import './themes/gml.css';
-@import './themes/googlecode.css';
-@import './themes/gradient-dark.css';
-@import './themes/gradient-light.css';
-@import './themes/grayscale.css';
-@import './themes/hybrid.css';
-@import './themes/idea.css';
-@import './themes/intellij-light.css';
-@import './themes/ir-black.css';
-@import './themes/isbl-editor-dark.css';
-@import './themes/isbl-editor-light.css';
-@import './themes/kimbie-dark.css';
-@import './themes/kimbie-light.css';
-@import './themes/lightfair.css';
-@import './themes/lioshi.css';
-@import './themes/magula.css';
-@import './themes/mono-blue.css';
-@import './themes/monokai-sublime.css';
-@import './themes/monokai.css';
-@import './themes/night-owl.css';
-@import './themes/nnfx-dark.css';
-@import './themes/nnfx-light.css';
-@import './themes/nord.css';
-@import './themes/obsidian.css';
-@import './themes/panda-syntax-dark.css';
-@import './themes/panda-syntax-light.css';
-@import './themes/paraiso-dark.css';
-@import './themes/paraiso-light.css';
-@import './themes/pojoaque.css';
-@import './themes/purebasic.css';
-@import './themes/qtcreator-dark.css';
-@import './themes/qtcreator-light.css';
-@import './themes/rainbow.css';
-@import './themes/routeros.css';
-@import './themes/school-book.css';
-@import './themes/shades-of-purple.css';
-@import './themes/srcery.css';
-@import './themes/stackoverflow-dark.css';
-@import './themes/stackoverflow-light.css';
-@import './themes/sunburst.css';
-@import './themes/tokyo-night-dark.css';
-@import './themes/tokyo-night-light.css';
-@import './themes/tomorrow-night-blue.css';
-@import './themes/tomorrow-night-bright.css';
-@import './themes/vs.css';
-@import './themes/vs2015.css';
-@import './themes/xcode.css';
-@import './themes/xt256.css';
-
-.filament-syntax-entry-component .grid {
-    @apply block;
+.syntax-entry-component .grid {
+    @apply grid-cols-1;
 }
 
-.filament-syntax-entry {
-    @apply font-mono rounded-xl overflow-hidden shadow-sm ring-1;
+.syntax-entry-theme-filament {
+    @apply p-6 bg-gray-50 dark:bg-gray-950 font-mono text-sm text-gray-950 dark:text-white leading-6 rounded-xl shadow-sm ring-1 ring-gray-950/5 dark:ring-white/10;
 
-    .hljs {
-        @apply block p-6 overflow-x-scroll;
+    .hl-keyword {
+        @apply text-blue-600;
+    }
+    
+    .hl-property,
+    .hl-value,
+    .hl-variable {
+        @apply text-gray-950 dark:text-white;
+    }
+    
+    .hl-type {
+        @apply text-red-600;
+    }
+    
+    .hl-generic {
+        @apply text-purple-600;
+    }
+    
+    .hl-comment span,
+    .hl-comment {
+        @apply text-gray-600;
+    }
+    
+    .hl-blur {
+        @apply blur-sm;
+    }
+    
+    .hl-strong {
+        @apply font-bold;
+    }
+    
+    .hl-attribute,
+    .hl-em {
+        @apply italic;
     }
 }
 
-:is(.dark .filament-syntax-entry) {
-    @apply ring-white/10;
-}
-
-:not(.dark .filament-syntax-entry) {
-    @apply ring-gray-950/5;
-}

@@ -5,7 +5,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/parallax/filament-syntax-entry?style=flat-square)](https://packagist.org/packages/parallax/filament-syntax-entry)
 ![Stars](https://img.shields.io/github/stars/parallax/filament-syntax-entry?style=flat-square)
 
-Add a Filament [infolist entry](https://filamentphp.com/docs/3.x/infolists/entries/getting-started) for themeable syntax highlighting using [highlight.js](https://highlightjs.org).
+Add a Filament [infolist entry](https://filamentphp.com/docs/3.x/infolists/entries/getting-started) for themeable server-side syntax highlighting using [tempestphp/highlight](https://github.com/tempestphp/highlight).
 
 <img class="filament-hidden" src="https://github.com/parallax/filament-syntax-entry/raw/main/assets/filament-syntax-entry.jpg"/>
 
@@ -22,6 +22,14 @@ Optionally, you can publish the views using
 ```bash
 php artisan vendor:publish --tag="filament-syntax-entry-views"
 ```
+
+## Upgrading from 1.x
+
+There are a couple of important changes to be aware of when upgrading to version 2.x:
+
+- PHP 8.3 is required for server-side syntax highlighting
+- Highlight.js is no longer supported
+- Theme selection has been replaced with the ability to create custom themes
 
 ## Quickstart
 
@@ -50,116 +58,43 @@ class ProductResource extends Resource
 
 ### Setting the language
 
-Automatic language detection is enabled by default so this isn't required, but if you would like to define the language used you may use the `language()` method:
+The default language value is set to `json`. To override this value you may use the `language()` method:
 
 ```php
 SyntaxEntry::make('metadata')
     ->language('json');
 ```
 
-To keep the bundle size down only the following languages are currently available:
+The following languages are currently available:
 
-- `bash`
+- `blade`
 - `css`
-- `dockerfile`
-- `graphql`
+- `gdscript`
+- `html`
 - `javascript`
 - `json`
-- `markdown`
 - `php`
-- `scss`
-- `shell`
 - `sql`
-- `typescript`
+- `twig`
 - `xml`
 - `yaml`
 
-### Setting the theme
+### Creating a custom theme
 
-You may override the default themes using the `theme()` and/or `darkModeTheme()` methods:
+You may override the default theme by using the `theme()` method:
 
 ```php
 SyntaxEntry::make('metadata')
-    ->theme('filament')
-    ->darkModeTheme('filament-dark');
+    ->theme('smudge');
 ```
 
-The following themes are currently available:
+This will wrap the syntax component with a custom class like so:
 
-- `a11y-dark`
-- `a11y-light`
-- `agate`
-- `an-old-hope`
-- `androidstudio`
-- `arduino-light`
-- `arta`
-- `ascetic`
-- `atom-one-dark-reasonable`
-- `atom-one-dark`
-- `atom-one-light`
-- `brown-paper`
-- `codepen-embed`
-- `color-brewer`
-- `dark`
-- `default`
-- `devibeans`
-- `docco`
-- `far`
-- `felipec`
-- `filament-dark` (default dark mode theme)
-- `filament` (default theme)
-- `foundation`
-- `github-dark-dimmed`
-- `github-dark`
-- `github`
-- `gml`
-- `googlecode`
-- `gradient-dark`
-- `gradient-light`
-- `grayscale`
-- `hybrid`
-- `idea`
-- `intellij-light`
-- `ir-black`
-- `isbl-editor-dark`
-- `isbl-editor-light`
-- `kimbie-dark`
-- `kimbie-light`
-- `lightfair`
-- `lioshi`
-- `magula`
-- `mono-blue`
-- `monokai-sublime`
-- `monokai`
-- `night-owl`
-- `nnfx-dark`
-- `nnfx-light`
-- `nord`
-- `obsidian`
-- `panda-syntax-dark`
-- `panda-syntax-light`
-- `paraiso-dark`
-- `paraiso-light`
-- `pojoaque`
-- `purebasic`
-- `qtcreator-dark`
-- `qtcreator-light`
-- `rainbow`
-- `routeros`
-- `school-book`
-- `shades-of-purple`
-- `srcery`
-- `stackoverflow-dark`
-- `stackoverflow-light`
-- `sunburst`
-- `tokyo-night-dark`
-- `tokyo-night-light`
-- `tomorrow-night-blue`
-- `tomorrow-night-bright`
-- `vs`
-- `vs2015`
-- `xcode`
-- `xt256`
+```
+syntax-entry-theme-smudge
+```
+
+The final step is to follow the [tempestphp/highlight](https://github.com/tempestphp/highlight) documentation on how to create your own theme, and use this in combination with [Filament themes](https://filamentphp.com/docs/3.x/panels/themes#creating-a-custom-theme).
 
 ## Changelog
 

@@ -3,21 +3,33 @@
 namespace Parallax\FilamentSyntaxEntry;
 
 use Closure;
-use Filament\Infolists\Components\Concerns\HasAffixes;
+use Filament\Infolists\Components\Concerns;
 use Filament\Infolists\Components\Contracts\HasAffixActions;
 use Filament\Infolists\Components\Entry;
+use Illuminate\Support\HtmlString;
+use Illuminate\Support\Str;
+use Tempest\Highlight\Highlighter;
 
 class SyntaxEntry extends Entry implements HasAffixActions
 {
-    use HasAffixes;
+    use Concerns\CanFormatState;
+    use Concerns\HasAffixes;
 
     protected string $view = 'filament-syntax-entry::syntax-entry';
 
-    protected string | Closure | null $language = null;
+    protected string | Closure | null $language = 'json';
 
     protected string | Closure | null $theme = 'filament';
 
-    protected string | Closure | null $darkModeTheme = 'filament-dark';
+    public function getValue(): HtmlString
+    {
+        $state = $this->getState();
+        $language = $this->language;
+        $toParse = !is_string($state) || $language === 'json' ? json_encode($state, JSON_PRETTY_PRINT) : $state;
+        $parsed = (new Highlighter())->parse($toParse, $language);
+
+        return Str::of($parsed)->toHtmlString();
+    }
 
     public function language(string | Closure $language): static
     {
