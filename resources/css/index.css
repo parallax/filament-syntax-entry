@@ -1,22 +1,46 @@
 @import '../../vendor/filament/filament/resources/css/theme.css';
-@import "../../vendor/tempest/highlight/src/Themes/highlight-light-lite.css";
 
-.filament-syntax-entry-component .grid {
-    @apply block;
+.syntax-entry-component .grid {
+    @apply grid-cols-1;
 }
 
-.filament-syntax-entry {
-    @apply font-mono rounded-xl overflow-hidden shadow-sm ring-1;
+.syntax-entry-theme-filament {
+    @apply p-6 bg-gray-50 dark:bg-gray-950 font-mono text-sm text-gray-950 dark:text-white leading-6 rounded-xl shadow-sm ring-1 ring-gray-950/5 dark:ring-white/10;
 
-    .hljs {
-        @apply block p-6 overflow-x-scroll;
+    .hl-keyword {
+        @apply text-blue-600;
+    }
+    
+    .hl-property,
+    .hl-value,
+    .hl-variable {
+        @apply text-gray-950 dark:text-white;
+    }
+    
+    .hl-type {
+        @apply text-red-600;
+    }
+    
+    .hl-generic {
+        @apply text-purple-600;
+    }
+    
+    .hl-comment span,
+    .hl-comment {
+        @apply text-gray-600;
+    }
+    
+    .hl-blur {
+        @apply blur-sm;
+    }
+    
+    .hl-strong {
+        @apply font-bold;
+    }
+    
+    .hl-attribute,
+    .hl-em {
+        @apply italic;
     }
 }
 
-:is(.dark .filament-syntax-entry) {
-    @apply ring-white/10;
-}
-
-:not(.dark .filament-syntax-entry) {
-    @apply ring-gray-950/5;
-}

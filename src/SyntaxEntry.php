@@ -21,14 +21,12 @@ class SyntaxEntry extends Entry implements HasAffixActions
 
     protected string | Closure | null $theme = 'filament';
 
-    protected string | Closure | null $darkModeTheme = 'filament-dark';
-
     public function getValue(): HtmlString
     {
         $state = $this->getState();
         $language = $this->language;
         $toParse = !is_string($state) || $language === 'json' ? json_encode($state, JSON_PRETTY_PRINT) : $state;
-        $parsed = (new Highlighter())->parse($toParse, 'json');
+        $parsed = (new Highlighter())->parse($toParse, $language);
 
         return Str::of($parsed)->toHtmlString();
     }

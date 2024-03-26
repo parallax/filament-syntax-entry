@@ -3272,6 +3272,10 @@ select {
   overflow-x: clip;
 }
 
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4221,98 +4225,84 @@ select {
   transform: translateZ(0);
 }
 
-:root {
-  --background-color: #f3f3f3;
-  --text-color: #000;
-  --keyword-color: #4285F4;
-  --property-color: #34A853;
-  --type-color: #EA4334;
-  --generic-color: #9d3af6;
-  --value-color: #000;
-  --comment-color: #888888;
+.syntax-entry-component .grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.hl-keyword {
-  color: var(--keyword-color);
-}
-
-.hl-property {
-  color: var(--property-color);
-}
-
-.hl-attribute {
-  font-family: "Radon", inherit, monospace;
-}
-
-.hl-type {
-  color: var(--type-color);
-}
-
-.hl-generic .hl-type,
-.hl-generic {
-  color: var(--generic-color);
-}
-
-.hl-value {
-  color: var(--value-color);
-}
-
-.hl-comment {
-  color: var(--comment-color);
-}
-
-.hl-blur {
-  filter: blur(2px);
-}
-
-.hl-strong {
-  font-weight: bold;
-}
-
-.hl-em {
-  font-style: italic;
-}
-
-.hl-addition {
-  display: inline-block;
-  min-width: 100%;
-  background-color: #00FF0033;
-}
-
-.hl-deletion {
-  display: inline-block;
-  min-width: 100%;
-  background-color: #FF000022;
-}
-
-.filament-syntax-entry-component .grid {
-  display: block;
-}
-
-.filament-syntax-entry {
-  overflow: hidden;
+.syntax-entry-theme-filament {
   border-radius: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(var(--gray-50), var(--tw-bg-opacity));
+  padding: 1.5rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(var(--gray-950), var(--tw-text-opacity));
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: rgba(var(--gray-950), 0.05);
 }
 
-.filament-syntax-entry .hljs {
-  display: block;
-  overflow-x: scroll;
-  padding: 1.5rem;
-}
-
-:is(.dark .filament-syntax-entry) {
+:is(.dark .syntax-entry-theme-filament) {
+  --tw-bg-opacity: 1;
+  background-color: rgba(var(--gray-950), var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-ring-color: rgb(255 255 255 / 0.1);
 }
 
-:not(.dark .filament-syntax-entry) {
-  --tw-ring-color: rgba(var(--gray-950), 0.05);
+.syntax-entry-theme-filament .hl-keyword {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.syntax-entry-theme-filament .hl-property,
+    .syntax-entry-theme-filament .hl-value,
+    .syntax-entry-theme-filament .hl-variable {
+  --tw-text-opacity: 1;
+  color: rgba(var(--gray-950), var(--tw-text-opacity));
+}
+
+:is(.dark .syntax-entry-theme-filament .hl-property),:is(.dark 
+    .syntax-entry-theme-filament .hl-value),:is(.dark 
+    .syntax-entry-theme-filament .hl-variable) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.syntax-entry-theme-filament .hl-type {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.syntax-entry-theme-filament .hl-generic {
+  --tw-text-opacity: 1;
+  color: rgb(147 51 234 / var(--tw-text-opacity));
+}
+
+.syntax-entry-theme-filament .hl-comment span,
+    .syntax-entry-theme-filament .hl-comment {
+  --tw-text-opacity: 1;
+  color: rgba(var(--gray-600), var(--tw-text-opacity));
+}
+
+.syntax-entry-theme-filament .hl-blur {
+  --tw-blur: blur(4px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.syntax-entry-theme-filament .hl-strong {
+  font-weight: 700;
+}
+
+.syntax-entry-theme-filament .hl-attribute,
+    .syntax-entry-theme-filament .hl-em {
+  font-style: italic;
 }
 
 :is(.dark .dark\:prose-invert) {
@@ -6056,3 +6046,4 @@ input:focus-visible+.\[input\:focus-visible\+\&\]\:ring-gray-950\/10 {
 :is(.dark input:focus-visible+.dark\:\[input\:focus-visible\+\&\]\:ring-white\/20) {
   --tw-ring-color: rgb(255 255 255 / 0.2);
 }
+
