@@ -3,7 +3,7 @@
 }
 
 .syntax-entry-theme-filament {
-    @apply p-6 bg-gray-50 dark:bg-gray-950 font-mono text-sm text-gray-950 dark:text-white leading-6 rounded-xl shadow-sm ring-1 ring-gray-950/5 dark:ring-white/10;
+    @apply p-6 bg-gray-50 dark:bg-gray-950 font-mono text-sm text-gray-950 dark:text-white leading-6 rounded-xl shadow-sm ring-1 ring-gray-950/5 dark:ring-white/10 overflow-x-auto;
 
     .hl-keyword {
         @apply text-blue-600;
