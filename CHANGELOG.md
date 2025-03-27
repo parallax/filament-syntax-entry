@@ -2,6 +2,11 @@
 
 All notable changes to `filament-syntax-entry` will be documented in this file.
 
+## 2.1.0 - March 27, 2025
+
+- Added support for Laravel 12
+- Upgraded [tempestphp/highlight](https://github.com/tempestphp/highlight) to v2
+
 ## 2.0.0 - March 26, 2024
 
 - Syntax highlighting now handled server-side using [tempestphp/highlight](https://github.com/tempestphp/highlight)
