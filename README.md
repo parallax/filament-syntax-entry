@@ -1,25 +1,34 @@
 # Filament Syntax Entry
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/parallax/filament-syntax-entry?style=flat-square)](https://packagist.org/packages/parallax/filament-syntax-entry)
-[![Software License](https://img.shields.io/packagist/l/parallax/filament-syntax-entry?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/parallax/filament-syntax-entry?style=flat-square)](https://packagist.org/packages/parallax/filament-syntax-entry)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/parallax/filament-syntax-entry?style=flat-square)](https://packagist.org/packages/parallax/filament-syntax-entry)  
+[![Software License](https://img.shields.io/packagist/l/parallax/filament-syntax-entry?style=flat-square)](LICENSE.md)  
+[![Total Downloads](https://img.shields.io/packagist/dt/parallax/filament-syntax-entry?style=flat-square)](https://packagist.org/packages/parallax/filament-syntax-entry)  
 ![Stars](https://img.shields.io/github/stars/parallax/filament-syntax-entry?style=flat-square)
 
 Add a Filament [infolist entry](https://filamentphp.com/docs/3.x/infolists/entries/getting-started) for themeable server-side syntax highlighting using [tempestphp/highlight](https://github.com/tempestphp/highlight).
 
-<img class="filament-hidden" src="https://github.com/parallax/filament-syntax-entry/raw/main/assets/filament-syntax-entry.jpg"/>
+![](https://github.com/parallax/filament-syntax-entry/raw/main/assets/filament-syntax-entry.jpg)
 
 ## Installation
 
-Install the package via composer:
+1. Install the package via composer:
 
-```bash
+```
 composer require parallax/filament-syntax-entry
+```
+
+2. Add the plugin's views to your `tailwind.config.js` file.
+
+```js
+content: [
+    ...
+    '<path-to-vendor>/parallax/filament-syntax-entry/resources/**/*.blade.php',
+]
 ```
 
 Optionally, you can publish the views using
 
-```bash
+```
 php artisan vendor:publish --tag="filament-syntax-entry-views"
 ```
 
